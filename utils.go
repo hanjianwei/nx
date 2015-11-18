@@ -6,8 +6,6 @@ import (
 	"net"
 	"net/http"
 	"os/exec"
-
-	"github.com/miekg/dns"
 )
 
 func readURL(url string) ([]byte, error) {
@@ -36,21 +34,4 @@ func parseIPNets(ipstrs []string) []*net.IPNet {
 	}
 
 	return ipnets
-}
-
-func resolveDomain(domain string) []net.IP {
-	m := new(dns.Msg)
-	m.SetQuestion(domain, dns.TypeA)
-
-	in, err := dns.Exchange(m, "8.8.8.8:53")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	ips := make([]net.IP, len(in.Answer))
-	for i, a := range in.Answer {
-		ips[i] = a.(*dns.A).A
-	}
-
-	return ips
 }
