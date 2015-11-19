@@ -1,11 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net"
 	"net/http"
 	"os/exec"
+	"regexp"
+	"strings"
 )
 
 func readURL(url string) ([]byte, error) {
@@ -34,4 +37,27 @@ func parseIPNets(ipstrs []string) []*net.IPNet {
 	}
 
 	return ipnets
+}
+
+func isDigits(name string) bool {
+	if m, _ := regexp.MatchString(`^[1-9][0-9]*$`, name); !m {
+		return false
+	}
+	return true
+}
+
+func isDomain(name string) bool {
+	return strings.Contains(name, ".")
+}
+
+func printIPNets(ipnets []*net.IPNet) {
+	for _, ipnet := range ipnets {
+		fmt.Println(ipnet)
+	}
+}
+
+func printIPs(ips []net.IP) {
+	for _, ip := range ips {
+		fmt.Println(ip)
+	}
 }
