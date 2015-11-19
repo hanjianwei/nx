@@ -1,4 +1,4 @@
-package main
+package nx
 
 import (
 	"fmt"
