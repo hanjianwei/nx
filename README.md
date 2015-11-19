@@ -4,7 +4,7 @@
 
 ~~~ bash
 $ go get
-$ go install
+$ go install github.com/hanjianwei/nx/nx
 ~~~
 
 ## Usage
