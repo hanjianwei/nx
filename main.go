@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/hanjianwei/nx"
+	"github.com/hanjianwei/nx/nxlib"
 )
 
 const appVersion = "0.1.0"
