@@ -18,4 +18,11 @@ $ nx twitter.com
 
 # ASN
 $ nx 13949
-~~~
+~~~~
+
+## Generate routeros rules
+
+~~~ bash
+$ cd ./scripts && ./run.sh
+~~~~
+
