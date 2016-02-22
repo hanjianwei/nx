@@ -32,7 +32,7 @@ func awsIPs() []*net.IPNet {
 	// Extract IP ranges
 	var ipstrs []string
 	for _, prefix := range res.Prefixes {
-		if strings.HasPrefix(prefix.Region, "cn-") {
+		if !strings.HasPrefix(prefix.Region, "cn-") {
 			ipstrs = append(ipstrs, prefix.IPPrefix)
 		}
 	}

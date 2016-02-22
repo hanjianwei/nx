@@ -13,5 +13,5 @@ func cfIPs() []*net.IPNet {
 		log.Fatal(err)
 	}
 
-	return parseIPNets(strings.Split(string(content), "\n"))
+	return parseIPNets(strings.Fields(string(content)))
 }
