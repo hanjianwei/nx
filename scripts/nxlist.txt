@@ -1,5 +1,5 @@
-aws
-cf
+amazon
+cloudflare
 google
 twitter
 facebook
