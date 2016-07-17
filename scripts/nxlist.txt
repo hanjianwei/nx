@@ -8,5 +8,4 @@ akamai
 edgecast
 dropbox
 wikimedia
-github
 automattic
