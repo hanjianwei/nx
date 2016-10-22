@@ -5,7 +5,6 @@ twitter
 facebook
 fastly
 akamai
-edgecast
 dropbox
 wikimedia
 automattic
